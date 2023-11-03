@@ -2,13 +2,21 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
+import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
+import { LoginRedirectComponent } from './login-redirect/login-redirect.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginRedirectComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule,
+    RouterModule.forRoot([
+      {path: 'redirect', component: LoginRedirectComponent}
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
